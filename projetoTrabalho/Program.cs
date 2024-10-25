@@ -16,7 +16,7 @@ namespace projetoTrabalho
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPosLogin());
+            Application.Run(new FormLogin());
         }
     }
 }

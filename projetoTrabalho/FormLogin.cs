@@ -52,61 +52,8 @@ namespace projetoTrabalho
 
             if (e.KeyCode == Keys.Enter)
             {
-            string connection = gbd.getConnectionString();
-
-            MySqlConnection conn = new MySqlConnection(connection);
-            string nome = textBox1.Text;
-            string senha = textBox2.Text;
-            bool nomeOK = false;
-            bool senhaOK = false;
-
-            try
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "select * from funcionarios";
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    if (nome == reader.GetValue(1).ToString())
-                    {
-                        nomeOK = true;
-                    }
-                    if (nomeOK)
-                    {
-                        if (senha == reader.GetValue(2).ToString())
-                        {
-                            senhaOK = true;
-                        }
-                        break;
-                    }
-                }
-                    if (nomeOK && senhaOK)
-                {
-                    MessageBox.Show("Bem vindo ao sistema");
-                }
-                else
-                {
-                    MessageBox.Show("Dados Incorretos");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            FormPosLogin fcf = new FormPosLogin();
-            fcf.ShowDialog();
-            }
-        }
-
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
                 string connection = gbd.getConnectionString();
-                
+
                 MySqlConnection conn = new MySqlConnection(connection);
                 string nome = textBox1.Text;
                 string senha = textBox2.Text;
@@ -114,7 +61,7 @@ namespace projetoTrabalho
                 bool senhaOK = false;
 
                 try
-            {
+                {
                     conn.Open();
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = conn;
@@ -125,33 +72,80 @@ namespace projetoTrabalho
                         if (nome == reader.GetValue(1).ToString())
                         {
                             nomeOK = true;
-            }
+                        }
                         if (nomeOK)
-            {
+                        {
                             if (senha == reader.GetValue(2).ToString())
                             {
                                 senhaOK = true;
-            }
+                            }
                             break;
                         }
                     }
                     if (nomeOK && senhaOK)
-            {
+                    {
                         MessageBox.Show("Bem vindo ao sistema");
-            }
-            else
-            {
+                    }
+                    else
+                    {
                         MessageBox.Show("Dados Incorretos");
-        } 
-    
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-                FormCadastro fcf = new FormCadastro();
-                fcf.ShowDialog(); 
-        }
+                    }
+                }
                 catch (Exception ex)
-        {
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            FormPosLogin fcf = new FormPosLogin();
+            fcf.ShowDialog();
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        { 
+            if (e.KeyCode == Keys.Enter)
+            {
+                string connection = gbd.getConnectionString();
+
+                MySqlConnection conn = new MySqlConnection(connection);
+                string nome = textBox1.Text;
+                string senha = textBox2.Text;
+                bool nomeOK = false;
+                bool senhaOK = false;
+
+                try
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "select * from funcionarios";
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        if (nome == reader.GetValue(1).ToString())
+                        {
+                            nomeOK = true;
+                        }
+                        if (nomeOK)
+                        {
+                            if (senha == reader.GetValue(2).ToString())
+                            {
+                                senhaOK = true;
+                            }
+                            break;
+                        }
+                    }
+                    if (nomeOK && senhaOK)
+                    {
+                        MessageBox.Show("Bem vindo ao sistema");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados Incorretos");
+                    }
+                }
+                catch (Exception ex)
+                {
 
                     MessageBox.Show(ex.Message);
                 }

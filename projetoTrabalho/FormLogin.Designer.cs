@@ -60,6 +60,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(98, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // textBox2
             // 
@@ -69,6 +70,7 @@
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 3;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // button1
             // 
@@ -79,6 +81,7 @@
             this.button1.Text = "Logar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
             // 
             // button2
             // 
@@ -106,6 +109,7 @@
             this.Name = "FormLogin";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormLogin_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormLogin_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

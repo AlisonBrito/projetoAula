@@ -99,7 +99,8 @@ namespace projetoTrabalho
             FormPosLogin fcf = new FormPosLogin();
             fcf.ShowDialog();
             }
-        }
+        } 
+
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         { 
@@ -151,6 +152,22 @@ namespace projetoTrabalho
                 }
                 FormPosLogin fcf = new FormPosLogin();
                 fcf.ShowDialog();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == " ")
+            {
+                MessageBox.Show("Preencha todos os campos");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == " ")
+            {
+                MessageBox.Show("Preencha todos os campos");
             }
         }
     }

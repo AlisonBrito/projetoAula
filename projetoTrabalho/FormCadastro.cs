@@ -35,10 +35,20 @@ namespace projetoTrabalho
 
             foreach (char c in textBox2.Text)
             {
-                if (c >= 65 && c <= 90) MAIUSCULA = true;
-                if (c >= 97 && c <= 122) MINISCULA = true;
+                if (c >= 65 && c <= 90)
+                {
+                    MAIUSCULA = true;
+                }
+
+                if (c >= 97 && c <= 122)
+                {
+                    MINISCULA = true;
+                }
+
                 if ((c >= 33 && c <= 47) || (c >= 58 && c <= 64) || (c >= 91 && c <= 96) || (c >= 123 && c <= 126))
+                {
                     CARACTERESPECIAL = true;
+                }
 
                 if (MAIUSCULA && MINISCULA && CARACTERESPECIAL)
                 {
